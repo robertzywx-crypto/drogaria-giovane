@@ -13,48 +13,45 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background-color: #ffffff;
             color: #b00000;
         }
 
         /* LOGO */
         .logo-canto {
-            position: fixed;
-            top: 15px;
-            left: 15px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
             width: 60px;
             height: 60px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid white;
             background-color: white;
-            z-index: 1000;
-            transition: transform 0.3s ease;
+            border: 3px solid white;
         }
 
-        .logo-canto:hover {
-            transform: scale(1.1);
-        }
-
-        /* HEADER / CAPA */
+        /* HEADER */
         header {
+            position: relative;
             background: linear-gradient(135deg, #b00000, #d10000);
             color: white;
             text-align: center;
-            padding: 70px 20px;
-            animation: fadeDown 1s ease;
+            padding: 80px 20px 60px;
         }
 
         header h1 {
-            font-size: 2.7em;
+            font-size: 2.6em;
             margin-bottom: 10px;
         }
 
         header p {
             font-size: 1.2em;
-            opacity: 0.95;
         }
 
         /* BOTÃO */
@@ -66,7 +63,7 @@
             display: inline-block;
             background-color: white;
             color: #b00000;
-            padding: 15px 35px;
+            padding: 14px 32px;
             border-radius: 30px;
             font-weight: bold;
             text-decoration: none;
@@ -78,18 +75,21 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
 
-        /* SEÇÕES */
-        section {
-            padding: 60px 20px;
+        /* MAIN */
+        main {
             max-width: 1100px;
             margin: auto;
-            animation: fadeUp 1s ease;
+            padding: 60px 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
         }
 
         section h2 {
             text-align: center;
-            margin-bottom: 20px;
             font-size: 2em;
+            margin-bottom: 15px;
         }
 
         section p {
@@ -104,29 +104,6 @@
             padding: 20px;
             font-size: 0.9em;
             color: #555;
-        }
-
-        /* ANIMAÇÕES */
-        @keyframes fadeDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         /* MOBILE */
@@ -150,11 +127,9 @@
 
 <body>
 
-    <!-- LOGO -->
-    <img src="./logo.png" alt="Logo Drogaria Giovane" class="logo-canto">
-
-    <!-- CAPA -->
     <header>
+        <img src="./logo.png" alt="Logo Drogaria Giovane" class="logo-canto">
+
         <h1>Drogaria Giovane</h1>
         <p>Cuidando da sua saúde todos os dias</p>
 
@@ -163,16 +138,17 @@
         </div>
     </header>
 
-    <!-- PRODUTOS (VAZIO POR ENQUANTO) -->
-    <section id="produtos">
-        <h2>Produtos</h2>
-        <p>Em breve, os produtos da Drogaria Giovane estarão disponíveis aqui.</p>
-    </section>
+    <main>
+        <section id="produtos">
+            <h2>Produtos</h2>
+            <p>Em breve, os produtos da Drogaria Giovane estarão disponíveis aqui.</p>
+        </section>
+    </main>
 
-    <!-- RODAPÉ -->
     <footer>
         <p>© 2026 Drogaria Giovane</p>
     </footer>
 
 </body>
 </html>
+

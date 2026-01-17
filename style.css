@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drogaria Giovane</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffffff;
+            color: #b00000;
+        }
+
+        header {
+            background-color: #b00000;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+        section {
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            color: #b00000;
+        }
+
+        footer {
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9em;
+            color: #555;
+        }
+            .logo-canto {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            background-color: white;
+        }
+            .cta {
+            margin-top: 25px;
+        }
+
+        .btn-ver-produtos {
+            display: inline-block;
+            background-color: white;
+            color: #b00000;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-ver-produtos:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Capa do site -->
+    <!-- Logo circular no canto -->
+<img src="logo.png" alt="Logo Drogaria Giovane" class="logo-canto">
+
+<header>
+        <h1>Drogaria Giovane</h1>
+        <p>Cuidando da sua saúde todos os dias</p>
+            <div class="cta">
+            <a href="#produtos" class="btn-ver-produtos">Ver produtos</a>
+        </div>
+    </header>
+
+    <!-- Seção inicial simples -->
+    <section>
+        <h2>Bem-vindo</h2>
+        <p>Este site é apenas para visualização dos produtos da Drogaria Giovane.</p>
+    </section>
+
+<section id="produtos">
+    <h2>Produtos</h2>
+    <p>Em breve, os produtos da Drogaria Giovane estarão disponíveis aqui.</p>
+</section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>© 2026 Drogaria Giovane</p>
+    </footer>
+
+</body>
+</html>

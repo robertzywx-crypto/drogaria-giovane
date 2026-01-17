@@ -4,116 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Drogaria Giovane</title>
-
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior: smooth; }
 body { font-family: Arial, Helvetica, sans-serif; background:#fff; color:#b00000; }
-
-/* LOGO */
-.logo-canto {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    background-color: white;
-    border: 3px solid white;
-}
-
-/* HEADER */
-header {
-    position: relative;
-    background: linear-gradient(135deg, #b00000, #d10000);
-    color:white;
-    text-align:center;
-    padding:90px 20px 60px;
-}
+header { background: linear-gradient(135deg, #b00000, #d10000); color:white; text-align:center; padding:90px 20px 60px; }
 header h1 { font-size:2.6em; margin-bottom:10px; }
 header p { font-size:1.2em; }
 .cta { margin-top:30px; }
-.btn-ver-produtos {
-    background-color: white;
-    color: #b00000;
-    padding: 14px 32px;
-    border-radius: 30px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.btn-ver-produtos:hover {
-    transform: scale(1.1);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-
-/* MAIN */
+.btn-ver-produtos { background-color: white; color: #b00000; padding: 14px 32px; border-radius: 30px; font-weight: bold; border: none; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.btn-ver-produtos:hover { transform: scale(1.1); box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
 main { max-width:1100px; margin:auto; padding:60px 20px; }
-
 section h2 { text-align:center; font-size:2em; margin-bottom:30px; }
-
-/* CARDS */
-.cards {
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-    gap:20px;
-}
-.card {
-    background:white;
-    border-radius:15px;
-    padding:20px;
-    text-align:center;
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor:pointer;
-}
-.card:hover {
-    transform: scale(1.08);
-    box-shadow: 0 20px 40px rgba(176,0,0,0.3);
-}
+.cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:20px; }
+.card { background:white; border-radius:15px; padding:20px; text-align:center; box-shadow:0 10px 25px rgba(0,0,0,0.1); cursor:pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card:hover { transform: scale(1.08); box-shadow: 0 20px 40px rgba(176,0,0,0.3); }
 .card h3 { margin-bottom:10px; color:#b00000; }
 .preco { font-size:1.2em; font-weight:bold; color:#333; margin-bottom:12px; }
-
-/* DETALHE DO PRODUTO */
 #detalhe-produto { display:none; text-align:center; padding:40px 20px; }
-.btn-comprar, .btn-voltar {
-    display:inline-block;
-    margin-top:12px;
-    padding:10px 18px;
-    border-radius:20px;
-    font-weight:bold;
-    border:none;
-    cursor:pointer;
-    text-decoration:none;
-    transition: opacity 0.3s ease;
-}
+.btn-comprar, .btn-voltar { display:inline-block; margin-top:12px; padding:10px 18px; border-radius:20px; font-weight:bold; border:none; cursor:pointer; text-decoration:none; transition: opacity 0.3s ease; }
 .btn-comprar { background:#25D366; color:white; }
 .btn-comprar:hover { opacity:0.9; }
 .btn-voltar { background:#b00000; color:white; margin-left:10px; }
 .btn-voltar:hover { opacity:0.9; }
-
-/* FOOTER */
-footer {
-    background:#f2f2f2;
-    text-align:center;
-    padding:20px;
-    font-size:0.9em;
-    color:#555;
-    margin-top:40px;
-}
-
-/* RESPONSIVO */
-@media(max-width:600px){
-    .card:hover { transform:none; box-shadow:none; }
-}
+footer { background:#f2f2f2; text-align:center; padding:20px; font-size:0.9em; color:#555; margin-top:40px; }
+@media(max-width:600px){ .card:hover { transform:none; box-shadow:none; } }
 </style>
 </head>
 <body>
 
 <header>
-    <img src="logo.png" alt="Logo Drogaria Giovane" class="logo-canto">
     <h1>Drogaria Giovane</h1>
     <p>Cuidando da sua saúde todos os dias</p>
     <div class="cta">
@@ -122,49 +42,31 @@ footer {
 </header>
 
 <main>
-    <!-- BEBIDAS -->
-    <section id="bebidas">
+    <!-- Produtos -->
+    <section id="produtos-secoes">
         <h2>Bebidas</h2>
         <div class="cards" id="cards-bebidas"></div>
-    </section>
 
-    <!-- BISCOITOS E SNACKS -->
-    <section id="biscoitos-snacks">
         <h2>Biscoitos e Snacks</h2>
         <div class="cards" id="cards-snacks"></div>
-    </section>
 
-    <!-- SABONETES -->
-    <section id="sabonetess">
         <h2>Sabonetes e Higiene</h2>
         <div class="cards" id="cards-sabonetes"></div>
-    </section>
 
-    <!-- CHOCOLATES -->
-    <section id="chocolates">
         <h2>Chocolates</h2>
         <div class="cards" id="cards-chocolates"></div>
-    </section>
 
-    <!-- BOMBONS -->
-    <section id="bombons">
         <h2>Bombons</h2>
         <div class="cards" id="cards-bombons"></div>
-    </section>
 
-    <!-- GOMAS E BALAS -->
-    <section id="gomas-balas">
         <h2>Gomas de Mascar e Balas</h2>
         <div class="cards" id="cards-gomas"></div>
-    </section>
 
-    <!-- SORVETES -->
-    <section id="sorvetes">
         <h2>Sorvetes e Gelados</h2>
         <div class="cards" id="cards-sorvetes"></div>
     </section>
 
-    <!-- DETALHE DO PRODUTO -->
+    <!-- Detalhe Produto -->
     <section id="detalhe-produto">
         <h2 id="detalhe-nome"></h2>
         <p id="detalhe-preco"></p>
@@ -184,80 +86,79 @@ document.addEventListener("DOMContentLoaded", function(){
 
     const produtos = {
         bebidas: [
-            { nome: "Água", preco: 2.00 },
-            { nome: "Refrigerante lata", preco: 5.00 }
+            { nome:"Água", preco:2 },
+            { nome:"Refrigerante lata", preco:5 }
         ],
         snacks: [
-            { nome: "Clube Social (tradicional)", preco: 8.00 },
-            { nome: "Oreo chocolate", preco: 6.00 },
-            { nome: "Oreo morango", preco: 6.00 },
-            { nome: "Oreo tradicional", preco: 6.00 },
-            { nome: "Biscoito Wafer Prestige", preco: 6.00 },
-            { nome: "Biscoito Wafer Nescau", preco: 6.00 },
-            { nome: "Biscoito Wafer Galak", preco: 6.00 },
-            { nome: "Pringles original", preco: 15.00 },
-            { nome: "Pringles queijo", preco: 15.00 },
-            { nome: "Pringles pimenta", preco: 15.00 },
-            { nome: "Pringles creme cebola", preco: 15.00 },
-            { nome: "Bono chocolate", preco: 5.00 },
-            { nome: "Bono morango", preco: 5.00 }
+            { nome:"Clube Social (tradicional)", preco:8 },
+            { nome:"Oreo chocolate", preco:6 },
+            { nome:"Oreo morango", preco:6 },
+            { nome:"Oreo tradicional", preco:6 },
+            { nome:"Biscoito Wafer Prestige", preco:6 },
+            { nome:"Biscoito Wafer Nescau", preco:6 },
+            { nome:"Biscoito Wafer Galak", preco:6 },
+            { nome:"Pringles original", preco:15 },
+            { nome:"Pringles queijo", preco:15 },
+            { nome:"Pringles pimenta", preco:15 },
+            { nome:"Pringles creme cebola", preco:15 },
+            { nome:"Bono chocolate", preco:5 },
+            { nome:"Bono morango", preco:5 }
         ],
         sabonetes: [
-            { nome: "Sabonete de Glicerina Camomila 500mL", preco: 45.00 },
-            { nome: "Sabonete de Glicerina Lavanda 500mL", preco: 45.00 },
-            { nome: "Sabonete de Glicerina Calêndula 500mL", preco: 45.00 },
-            { nome: "Sabonete Líquido Lavanda 250mL", preco: 30.00 },
-            { nome: "Sabonete Líquido Camomila 250mL", preco: 30.00 },
-            { nome: "Sabonete Líquido Erva-Doce 250mL", preco: 30.00 },
-            { nome: "Sabonete Líquido Calêndula 250mL", preco: 30.00 }
+            { nome:"Sabonete de Glicerina Camomila 500mL", preco:45 },
+            { nome:"Sabonete de Glicerina Lavanda 500mL", preco:45 },
+            { nome:"Sabonete de Glicerina Calêndula 500mL", preco:45 },
+            { nome:"Sabonete Líquido Lavanda 250mL", preco:30 },
+            { nome:"Sabonete Líquido Camomila 250mL", preco:30 },
+            { nome:"Sabonete Líquido Erva-Doce 250mL", preco:30 },
+            { nome:"Sabonete Líquido Calêndula 250mL", preco:30 }
         ],
         chocolates: [
-            { nome: "Crunch", preco: 10.00 },
-            { nome: "Alpino", preco: 10.00 },
-            { nome: "Lacta Branco", preco: 10.00 },
-            { nome: "Diamante Negro", preco: 10.00 },
-            { nome: "Kit Kat branco", preco: 5.00 },
-            { nome: "Lacta Diamante Negro", preco: 4.00 },
-            { nome: "Lacta Chocolate", preco: 4.00 },
-            { nome: "Lacta Branco", preco: 4.00 },
-            { nome: "Chokito", preco: 5.00 },
-            { nome: "Prestígio", preco: 5.00 }
+            { nome:"Crunch", preco:10 },
+            { nome:"Alpino", preco:10 },
+            { nome:"Lacta Branco", preco:10 },
+            { nome:"Diamante Negro", preco:10 },
+            { nome:"Kit Kat branco", preco:5 },
+            { nome:"Lacta Diamante Negro", preco:4 },
+            { nome:"Lacta Chocolate", preco:4 },
+            { nome:"Lacta Branco", preco:4 },
+            { nome:"Chokito", preco:5 },
+            { nome:"Prestígio", preco:5 }
         ],
         bombons: [
-            { nome: "Caixa de Bombom Prestígio sortido", preco: 25.00 },
-            { nome: "Caixa de Bombom Kit Kat sortido", preco: 30.00 },
-            { nome: "Caixa de Bombom Nestlé sortido", preco: 20.00 }
+            { nome:"Caixa de Bombom Prestígio sortido", preco:25 },
+            { nome:"Caixa de Bombom Kit Kat sortido", preco:30 },
+            { nome:"Caixa de Bombom Nestlé sortido", preco:20 }
         ],
         gomas: [
-            { nome: "Trident Tutti Frutti", preco: 3.00 },
-            { nome: "Trident Herbal", preco: 3.00 },
-            { nome: "Trident Acid Blueberry", preco: 3.00 },
-            { nome: "Trident Melancia", preco: 3.00 },
-            { nome: "Trident Morango", preco: 3.00 },
-            { nome: "Trident Canela", preco: 3.00 },
-            { nome: "Mentos Rainbow", preco: 5.00 },
-            { nome: "Mentos Frutas Vermelhas", preco: 5.00 },
-            { nome: "Mentos Iogurte", preco: 5.00 },
-            { nome: "Mentos Mint", preco: 5.00 },
-            { nome: "Mentos Tutti Frutti", preco: 5.00 },
-            { nome: "Mentos Windy Grande", preco: 5.00 }
+            { nome:"Trident Tutti Frutti", preco:3 },
+            { nome:"Trident Herbal", preco:3 },
+            { nome:"Trident Acid Blueberry", preco:3 },
+            { nome:"Trident Melancia", preco:3 },
+            { nome:"Trident Morango", preco:3 },
+            { nome:"Trident Canela", preco:3 },
+            { nome:"Mentos Rainbow", preco:5 },
+            { nome:"Mentos Frutas Vermelhas", preco:5 },
+            { nome:"Mentos Iogurte", preco:5 },
+            { nome:"Mentos Mint", preco:5 },
+            { nome:"Mentos Tutti Frutti", preco:5 },
+            { nome:"Mentos Windy Grande", preco:5 }
         ],
         sorvetes: [
-            { nome: "Sorvete Toia Milho Verde", preco: 5.00 },
-            { nome: "Sorvete Toia Chocolate", preco: 5.00 },
-            { nome: "Sorvete Toia Açaí", preco: 5.00 },
-            { nome: "Picolé Açaí", preco: 5.00 },
-            { nome: "Picolé Chocolate", preco: 5.00 },
-            { nome: "Picolé Tapioca", preco: 5.00 },
-            { nome: "Picolé Morango", preco: 5.00 },
-            { nome: "Picolé Buriti", preco: 5.00 },
-            { nome: "Toieto de Chocolate", preco: 10.00 },
-            { nome: "Sundae", preco: 10.00 },
-            { nome: "Picolé de Brigadeiro", preco: 10.00 }
+            { nome:"Sorvete Toia Milho Verde", preco:5 },
+            { nome:"Sorvete Toia Chocolate", preco:5 },
+            { nome:"Sorvete Toia Açaí", preco:5 },
+            { nome:"Picolé Açaí", preco:5 },
+            { nome:"Picolé Chocolate", preco:5 },
+            { nome:"Picolé Tapioca", preco:5 },
+            { nome:"Picolé Morango", preco:5 },
+            { nome:"Picolé Buriti", preco:5 },
+            { nome:"Toieto de Chocolate", preco:10 },
+            { nome:"Sundae", preco:10 },
+            { nome:"Picolé de Brigadeiro", preco:10 }
         ]
     };
 
-    // IDs das seções
     const secaoMap = {
         bebidas: document.getElementById("cards-bebidas"),
         snacks: document.getElementById("cards-snacks"),
@@ -273,54 +174,39 @@ document.addEventListener("DOMContentLoaded", function(){
     const detalhePreco = document.getElementById("detalhe-preco");
     const btnWhatsApp = document.getElementById("btnWhatsApp");
     const btnVoltar = document.getElementById("btnVoltar");
-    const listaSecao = document.querySelector("main");
+    const produtosSecoes = document.getElementById("produtos-secoes");
     const btnVerProdutos = document.getElementById("btnProdutos");
 
-    // Renderiza produtos
+    // Renderiza produtos e cards
     for (let categoria in produtos) {
         produtos[categoria].forEach(produto => {
             const card = document.createElement("div");
             card.className = "card";
-
-            const nome = document.createElement("h3");
-            nome.textContent = produto.nome;
-
-            const preco = document.createElement("p");
-            preco.className = "preco";
-            preco.textContent = "R$ " + produto.preco.toFixed(2);
-
-            card.appendChild(nome);
-            card.appendChild(preco);
+            const nome = document.createElement("h3"); nome.textContent = produto.nome;
+            const preco = document.createElement("p"); preco.className="preco"; preco.textContent="R$ "+produto.preco.toFixed(2);
+            card.appendChild(nome); card.appendChild(preco);
             secaoMap[categoria].appendChild(card);
 
-            // Clique abre detalhe
             card.addEventListener("click", function(){
-                listaSecao.style.display = "none";
-                detalheSecao.style.display = "block";
-                detalheNome.textContent = produto.nome;
-                detalhePreco.textContent = "R$ " + produto.preco.toFixed(2);
-
-                // Link WhatsApp
-                const mensagem = `Olá, gostaria de comprar: ${produto.nome} - R$ ${produto.preco.toFixed(2)}`;
-                btnWhatsApp.href = `https://wa.me/${whatsappNumero}?text=${encodeURIComponent(mensagem)}`;
+                produtosSecoes.style.display="none";
+                detalheSecao.style.display="block";
+                detalheNome.textContent=produto.nome;
+                detalhePreco.textContent="R$ "+produto.preco.toFixed(2);
+                btnWhatsApp.href = `https://wa.me/${whatsappNumero}?text=${encodeURIComponent(`Olá, gostaria de comprar: ${produto.nome} - R$ ${produto.preco.toFixed(2)}`)}`;
             });
         });
     }
 
-    // Botão voltar
     btnVoltar.addEventListener("click", function(){
-        detalheSecao.style.display = "none";
-        listaSecao.style.display = "block";
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        detalheSecao.style.display="none";
+        produtosSecoes.style.display="block";
+        window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    // Botão "Ver produtos"
     btnVerProdutos.addEventListener("click", function(){
-        document.getElementById("bebidas").scrollIntoView({ behavior:"smooth" });
+        produtosSecoes.scrollIntoView({ behavior:"smooth" });
     });
-
 });
 </script>
-
 </body>
 </html>

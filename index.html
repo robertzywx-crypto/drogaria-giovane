@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drogaria Giovane</title>
+
     <style>
         body {
             margin: 0;
@@ -34,10 +35,6 @@
             text-align: center;
         }
 
-        section h2 {
-            color: #b00000;
-        }
-
         footer {
             background-color: #f2f2f2;
             text-align: center;
@@ -45,23 +42,39 @@
             font-size: 0.9em;
             color: #555;
         }
+
+        /* LOGO NO CANTO */
+        .logo-canto {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            background-color: white;
+            z-index: 1000;
+        }
     </style>
 </head>
+
 <body>
 
-    <!-- Capa do site -->
+    <!-- LOGO -->
+    <img src="./logo.png" alt="Logo Drogaria Giovane" class="logo-canto">
+
+    <!-- CAPA -->
     <header>
         <h1>Drogaria Giovane</h1>
         <p>Cuidando da sua saúde todos os dias</p>
     </header>
 
-    <!-- Seção inicial simples -->
     <section>
         <h2>Bem-vindo</h2>
         <p>Este site é apenas para visualização dos produtos da Drogaria Giovane.</p>
     </section>
 
-    <!-- Rodapé -->
     <footer>
         <p>© 2026 Drogaria Giovane</p>
     </footer>

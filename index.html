@@ -6,44 +6,20 @@
     <title>Drogaria Giovane</title>
 
     <style>
-        body {
+        /* RESET */
+        * {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
             background-color: #ffffff;
             color: #b00000;
         }
 
-        header {
-            background-color: #b00000;
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        header p {
-            margin-top: 10px;
-            font-size: 1.2em;
-        }
-
-        section {
-            padding: 30px 20px;
-            text-align: center;
-        }
-
-        footer {
-            background-color: #f2f2f2;
-            text-align: center;
-            padding: 15px;
-            font-size: 0.9em;
-            color: #555;
-        }
-
-        /* LOGO NO CANTO */
+        /* LOGO */
         .logo-canto {
             position: fixed;
             top: 15px;
@@ -55,6 +31,119 @@
             border: 3px solid white;
             background-color: white;
             z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-canto:hover {
+            transform: scale(1.1);
+        }
+
+        /* HEADER / CAPA */
+        header {
+            background: linear-gradient(135deg, #b00000, #d10000);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+            animation: fadeDown 1s ease;
+        }
+
+        header h1 {
+            font-size: 2.7em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        /* BOTÃO */
+        .cta {
+            margin-top: 30px;
+        }
+
+        .btn-ver-produtos {
+            display: inline-block;
+            background-color: white;
+            color: #b00000;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-ver-produtos:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        /* SEÇÕES */
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+            animation: fadeUp 1s ease;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        section p {
+            text-align: center;
+            color: #555;
+        }
+
+        /* RODAPÉ */
+        footer {
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        /* ANIMAÇÕES */
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .logo-canto {
+                width: 50px;
+                height: 50px;
+            }
+
+            .btn-ver-produtos:hover {
+                transform: none;
+                box-shadow: none;
+            }
         }
     </style>
 </head>
@@ -68,13 +157,19 @@
     <header>
         <h1>Drogaria Giovane</h1>
         <p>Cuidando da sua saúde todos os dias</p>
+
+        <div class="cta">
+            <a href="#produtos" class="btn-ver-produtos">Ver produtos</a>
+        </div>
     </header>
 
-    <section>
-        <h2>Bem-vindo</h2>
-        <p>Este site é apenas para visualização dos produtos da Drogaria Giovane.</p>
+    <!-- PRODUTOS (VAZIO POR ENQUANTO) -->
+    <section id="produtos">
+        <h2>Produtos</h2>
+        <p>Em breve, os produtos da Drogaria Giovane estarão disponíveis aqui.</p>
     </section>
 
+    <!-- RODAPÉ -->
     <footer>
         <p>© 2026 Drogaria Giovane</p>
     </footer>

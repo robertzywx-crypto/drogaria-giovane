@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drogaria Giovane</title>
+
+    <style>
+        /* RESET BÁSICO */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffffff;
+            color: #b00000;
+        }
+
+        /* LOGO NO CANTO */
+        .logo-canto {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: white;
+            border: 3px solid white;
+        }
+
+        /* HEADER / CAPA */
+        header {
+            position: relative;
+            background: linear-gradient(135deg, #b00000, #d10000);
+            color: white;
+            text-align: center;
+            padding: 90px 20px 60px;
+        }
+
+        header h1 {
+            font-size: 2.6em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        /* BOTÃO */
+        .cta {
+            margin-top: 30px;
+        }
+
+        .btn-ver-produtos {
+            display: inline-block;
+            background-color: white;
+            color: #b00000;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-ver-produtos:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* CONTEÚDO */
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        /* CARDS DE PRODUTO */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.08);
+            box-shadow: 0 20px 40px rgba(176,0,0,0.3);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #b00000;
+        }
+
+        .preco {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* RODAPÉ */
+        footer {
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 40px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            .card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <!-- LOGO -->
+        <img src="logo.png" alt="Logo Drogaria Giovane" class="logo-canto">
+
+        <h1>Drogaria Giovane</h1>
+        <p>Cuidando da sua saúde todos os dias</p>
+
+        <div class="cta">
+            <a href="#produtos" class="btn-ver-produtos">Ver produtos</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="produtos">
+            <h2>Produtos</h2>
+
+            <!-- JavaScript preenche aqui -->
+            <div class="cards" id="lista-produtos"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Drogaria Giovane</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // =========================
+        // DADOS DOS PRODUTOS
+        // =========================
+        const produtos = [
+            { nome: "Água", preco: 2.00 },
+            { nome: "Chocolate branco Nestlé", preco: 8.00 },
+            { nome: "Refrigerante lata", preco: 5.00 }
+        ];
+
+        // =========================
+        // CONTAINER
+        // =========================
+        const container = document.getElementById("lista-produtos");
+
+        if (!container) {
+            console.error("Erro: container #lista-produtos não encontrado.");
+        } else {
+
+            if (produtos.length === 0) {
+                const aviso = document.createElement("p");
+                aviso.textContent = "Nenhum produto disponível no momento.";
+                container.appendChild(aviso);
+            } else {
+                container.innerHTML = "";
+
+                produtos.forEach((produto) => {
+                    const card = document.createElement("div");
+                    card.classList.add("card");
+
+                    const nome = document.createElement("h3");
+                    nome.textContent = produto.nome;
+
+                    const preco = document.createElement("p");
+                    preco.classList.add("preco");
+                    preco.textContent = "R$ " + produto.preco.toFixed(2);
+
+                    card.appendChild(nome);
+                    card.appendChild(preco);
+                    container.appendChild(card);
+                });
+            }
+        }
+    </script>
+
+</body>
+</html>
